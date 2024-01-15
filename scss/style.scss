@@ -1,0 +1,19 @@
+@use 'reset';
+
+.container{
+    width: 90%;
+    margin: auto;
+
+    .content{
+        display: flex;
+        gap: 2%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .card{
+        width: 23%;
+        height: 200px;
+        // background-color: aqua;
+        margin: 20px 0px;
+    }
+}
