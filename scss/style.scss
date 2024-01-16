@@ -1,18 +1,32 @@
 @use 'reset';
 
 .container{
-    width: 90%;
+    width: 95%;
     margin: auto;
 
     .content{
         display: flex;
-        gap: 2%;
+        margin: 10px 0px;
         flex-wrap: wrap;
+        gap: 2%;
         justify-content: space-between;
+        
+        .card{
+            width: 18%;
+            margin: 10px 0px;
+            cursor: pointer;
+            text-align: center;
+
+            .card-body{
+                text-align: left;
+            }
+        }
     }
-    .card{
-        width: 23%;
-        height: 200px;
+    
+   
+    .body{
+        
+        text-align: left;
         // background-color: aqua;
         margin: 20px 0px;
     }

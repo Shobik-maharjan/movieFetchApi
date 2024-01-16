@@ -1,21 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: poppins;
+  background-color: hsl(0, 0%, 92%);
 }
 
 .container {
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 .container .content {
   display: flex;
-  gap: 2%;
+  margin: 10px 0px;
   flex-wrap: wrap;
+  gap: 2%;
   justify-content: space-between;
 }
-.container .card {
-  width: 23%;
-  height: 200px;
+.container .content .card {
+  width: 18%;
+  margin: 10px 0px;
+  cursor: pointer;
+  text-align: center;
+}
+.container .content .card .card-body {
+  text-align: left;
+}
+.container .body {
+  text-align: left;
   margin: 20px 0px;
 }/*# sourceMappingURL=style.css.map */
