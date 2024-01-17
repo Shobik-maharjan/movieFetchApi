@@ -20,39 +20,39 @@ if (movie_id) {
         const card = document.createElement("div");
         card.classList.add("card");
 
-        const cardBody = document.createElement("div");
-        cardBody.classList.add("card-body");
+        // const cardBody = document.createElement("div");
+        // cardBody.classList.add("card-body");
 
         const img = document.createElement("img");
-        const title = document.createElement("h3");
-        const desc = document.createElement("p");
-        const genre = document.createElement("p");
-        const rating = document.createElement("p");
-        const br = document.createElement("br");
+        const text = document.createElement("div");
+        text.classList.add("card-body");
+        // const text = document.createElement("p");
+        // const genre = document.createElement("p");
+        // const rating = document.createElement("p");
 
-        img.src = movie.medium_cover_image;
+        img.src = movie.large_cover_image;
         img.alt = movie.title;
 
-        title.textContent = movie.title;
-        desc.textContent = movie.description_full;
-        genre.innerHTML = `<b>Genres:</b> ${movie.genres}`;
-        rating.innerHTML = `<strong>Rating:</strong> ${movie.rating}`;
+        text.innerHTML = `<h3>${movie.title}</h3> <br><p>${movie.description_full}</p><br> <p><b>Genres:</b> ${movie.genres}</p> <br> <p><strong>Rating:</strong> ${movie.rating}</p> `;
+
+        // title.innerHTML = `<br><p>${movie.description_full}</p><br> <b>Genres:</b> ${movie.genres} <br> <strong>Rating:</strong> ${movie.rating} `;
+        // genre.innerHTML = `<br><b>Genres:</b> ${movie.genres}<br> <strong>Rating:</strong> ${movie.rating}`;
+        // rating.innerHTML = `<strong>Rating:</strong> ${movie.rating}`;
 
         card.appendChild(img);
-        cardBody.appendChild(title);
-        cardBody.appendChild(desc);
-        cardBody.appendChild(br);
-        cardBody.appendChild(genre);
-        cardBody.appendChild(rating);
+        card.appendChild(text);
+        // cardBody.appendChild(text);
+        // cardBody.appendChild(genre);
+        // cardBody.appendChild(rating);
 
-        card.appendChild(cardBody);
+        // card.appendChild(cardBody);
 
         content.appendChild(card);
         console.log(img);
-        console.log(title);
-        console.log(desc);
-        console.log(genre);
-        console.log(rating);
+        console.log(text);
+        // console.log(text);
+        // console.log(genre);
+        // console.log(rating);
       }
     })
     .catch((error) => console.log(error));

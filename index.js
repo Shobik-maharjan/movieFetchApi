@@ -5,11 +5,28 @@ let image = document.getElementById("image");
 let cardTitle = document.querySelector(".card-title");
 let img = document.querySelector("img");
 
+const loader = document.querySelector("#loading");
+function displayLoading() {
+  loader.classList.add("display");
+  // loader.classList.add("loading_margin");
+  setTimeout(() => {
+    loader.classList.remove("display");
+  }, 5000);
+}
+
+function hideLoading() {
+  loader.classList.remove("display");
+  loader.remove();
+}
+
+displayLoading();
 fetch("https://yts.mx/api/v2/list_movies.json?limit=50")
   .then((res) => {
     return res.json();
   })
+
   .then((data) => {
+    hideLoading();
     if (data && data.data && data.data.movies) {
       data.data.movies.forEach((item) => {
         if (!item.summary) {
@@ -22,16 +39,18 @@ fetch("https://yts.mx/api/v2/list_movies.json?limit=50")
         cardBody.classList.add("card-body");
 
         const img = document.createElement("img");
-        const title = document.createElement("h3");
-        const summary = document.createElement("p");
+        const title = document.createElement("p");
+        // const summary = document.createElement("p");
 
-        img.src = item.medium_cover_image;
+        img.src = item.large_cover_image;
         img.alt = item.title;
-        title.textContent = item.title;
-        summary.textContent = item.summary.slice(0, 50);
+        title.innerHTML = `<strong>${
+          item.title
+        }</strong> <br> ${item.summary.slice(0, 50)}`;
+        // summary.textContent = item.summary.slice(0, 50);
         card.appendChild(img);
         cardBody.appendChild(title);
-        cardBody.appendChild(summary);
+        // cardBody.appendChild(summary);
 
         card.appendChild(cardBody);
 
@@ -76,5 +95,4 @@ fetch("https://yts.mx/api/v2/list_movies.json?limit=50")
     // // card.innerHTML += title;
     // // content.innerHTML += divClose;
     // }
-  })
-  .catch((error) => console.log(error));
+  });

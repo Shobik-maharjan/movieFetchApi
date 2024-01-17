@@ -13,11 +13,31 @@
         background-color: hsl(0, 0%, 92%);
       }
 
-      .card {
-        width: 80%;
+      .container {
+        width: 95%;
         margin: auto;
+      }
+      .card {
+        width: 90%;
+        margin: 20px auto;
         display: flex;
         gap: 2%;
+      }
+      @media screen and (min-width: 0px) {
+        .card {
+          flex-direction: column;
+        }
+        img {
+          width: 100%;
+        }
+      }
+      @media screen and (min-width: 600px) {
+        .card {
+          flex-direction: row;
+        }
+        img {
+          width: 30%;
+        }
       }
     </style>
   </head>

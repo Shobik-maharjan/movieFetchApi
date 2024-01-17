@@ -24,10 +24,77 @@
   cursor: pointer;
   text-align: center;
 }
+.container .content .card img {
+  width: 100%;
+}
 .container .content .card .card-body {
-  text-align: left;
+  text-align: center;
 }
 .container .body {
   text-align: left;
   margin: 20px 0px;
+}
+
+#loading {
+  width: 3rem;
+  height: 3rem;
+  background-color: aqua;
+  border: 8px solid hsl(0, 0%, 89%);
+  border-top: 8px solid hsl(0, 0%, 14%);
+  border-radius: 100%;
+  visibility: hidden;
+  animation: spin 1s linear infinite;
+}
+#loading.display {
+  visibility: visible;
+  margin: 200px auto;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (min-width: 1080px) {
+  .container .content .card {
+    width: 23%;
+  }
+  img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 0px) {
+  .container .content {
+    flex-direction: column;
+    margin: 20px;
+  }
+  .container .content .card {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) {
+  .container .content {
+    flex-direction: row;
+  }
+  .container .content .card {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container .content .card {
+    width: 31%;
+  }
+}
+@media screen and (min-width: 930px) {
+  .container .content .card {
+    width: 18%;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .container .content .card {
+    width: 15%;
+  }
 }/*# sourceMappingURL=style.css.map */
